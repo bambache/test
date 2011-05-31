@@ -1,0 +1,5 @@
+Project Idea:
+  - build small application to act as a signal generator using the audio output of the PC
+  - use a lightweight audio framework,  eg Portaudio, or maybe SDL audio later to be able to show the waveforms
+  - at first output simple signals such as sine, sawtooth,, etc
+  - later build a decent gui 
