@@ -2,7 +2,7 @@ CPP = g++
 CPPFLAGS = `wx-config --cxxflags`
 LIBS = `wx-config --libs`
 OFLAG = -o
-PROGNAME = test.exe
+PROGNAME = test
 
 .SUFFIXES : .o .cpp
 .cpp.o :
@@ -11,7 +11,7 @@ PROGNAME = test.exe
 all: MyApp
 
 MyApp: MyApp.o MyFrame.o
-	$(CPP) MyApp.o MyFrame.o $(LIBS) -static $(OFLAG) $(PROGNAME)
+	$(CPP) MyApp.o MyFrame.o $(LIBS) $(OFLAG) $(PROGNAME)
 
 clean:
 	rm -rf *.o *.exe
