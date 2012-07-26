@@ -1,12 +1,9 @@
+include_directories (${TEST_SOURCE_DIR}/include/msvc) 
 include_directories (${TEST_SOURCE_DIR}/include) 
 
-# Make sure the linker can find the Hello library once it is built. 
-link_directories (${TEST_BINARY_DIR}/lib)
+link_directories (${TEST_SOURCE_DIR}/lib/vc_lib)
+link_directories (${TEST_SOURCE_DIR}/lib/vc_dll)
 
-# Add executable called "helloDemo" that is built from the source files 
-# "demo.cxx" and "demo_b.cxx". The extensions are automatically found. 
-add_executable (test MyApp.cxx)
+add_executable (test MyApp.h MyApp.cpp MyFrame.h MyFrame.cpp)
 
-# Link the executable to the Hello library. 
-target_link_libraries (test) 
-
+target_link_libraries (test wxbase28) 
