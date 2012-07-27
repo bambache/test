@@ -1,9 +1,12 @@
-include_directories (${TEST_SOURCE_DIR}/include/msvc) 
 include_directories (${TEST_SOURCE_DIR}/include) 
+include_directories (${TEST_SOURCE_DIR}/lib/vc_dll/msw) 
 
-link_directories (${TEST_SOURCE_DIR}/lib/vc_lib)
 link_directories (${TEST_SOURCE_DIR}/lib/vc_dll)
 
-add_executable (test MyApp.h MyApp.cpp MyFrame.h MyFrame.cpp)
+SET(mySrcs MyApp.h MyApp.cpp MyFrame.h MyFrame.cpp)
+add_executable (test ${mySrcs})
 
-target_link_libraries (test wxbase28) 
+
+SET (myDeps wxmsw28_adv.lib wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib)
+
+target_link_libraries (test ${myDeps}) 
