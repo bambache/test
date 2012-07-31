@@ -7,5 +7,9 @@ if (MSVC)
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS" CACHE STRING "wx Flags for all builds" FORCE)
 endif()
 
-add_subdirectory (src) 
+
+FIND_PACKAGE(wxWidgets REQUIRED core base)
+INCLUDE(${wxWidgets_USE_FILE})
+
+add_subdirectory (src)
 
