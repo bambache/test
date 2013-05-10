@@ -15,3 +15,6 @@ bool MyApp::OnInit()
     SetTopWindow(frame);
     return true;
 }
+
+
+// adding a comment to test push to git
